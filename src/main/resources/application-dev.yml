@@ -1,0 +1,28 @@
+#测试环境运行代码使用这个配置
+spring:
+  application:
+    # 应用名称
+    name: advertisement
+    # 数据源
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://rm-uf6t2a9yp77sfad16oo.mysql.rds.aliyuncs.com/guanggao?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+      username: chanceon
+      password: qwerasdf@123
+      initial-size: 10
+      max-active: 100
+      min-idle: 10
+      max-wait: 60000
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+
+
+  redis:
+    database: 2
+    host: 139.196.198.110
+    port: 6379
+    password: gUZTJJgI    # 密码（默认为空）
