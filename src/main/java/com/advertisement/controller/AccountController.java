@@ -28,7 +28,7 @@ public class AccountController {
     public R<PageUtils<SysAccountEntity>> accountList(@RequestBody SysAccountForm form,SysAccountEntity sysAccountEntity){
 
         if(sysAccountEntity.getRole() == null){
-            return R.fail("暂无权限");
+            return R.fail("暂无权限1");
         }
         return R.ok(sysAccountService.accountList(form));
     }
