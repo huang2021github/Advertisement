@@ -6,6 +6,8 @@ import com.advertisement.domain.SysAccountEntity;
 import com.advertisement.domain.ro.LoginResponse;
 import com.advertisement.form.LoginForm;
 import com.advertisement.form.SysAccountForm;
+import com.advertisement.oauth.UserLogin;
+import com.advertisement.oauth.UserLoginVerification;
 import com.advertisement.service.SysAccountService;
 import com.advertisement.utils.PageUtils;
 import lombok.extern.slf4j.Slf4j;
@@ -25,7 +27,8 @@ public class AccountController {
 
     //获取到全部用户信息（测试）
     @PostMapping("accountList")
-    public R<PageUtils<SysAccountEntity>> accountList(@RequestBody SysAccountForm form,SysAccountEntity sysAccountEntity){
+    @UserLoginVerification
+    public R<PageUtils<SysAccountEntity>> accountList(@RequestBody SysAccountForm form,@UserLogin SysAccountEntity sysAccountEntity){
 
         if(sysAccountEntity.getRole() == null){
             return R.fail("暂无权限1");

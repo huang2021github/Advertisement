@@ -14,6 +14,8 @@ public class SysConstants {
      */
     public static final int  TOKEN_EXPIRE = 604800;
 
+    public static final String PHONE = "phone";
+
     /**
      * 加密SECRET
      */
